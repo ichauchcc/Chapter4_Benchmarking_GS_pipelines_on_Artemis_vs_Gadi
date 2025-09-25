@@ -1,3 +1,31 @@
+# Benchmarking Genome Sequencing Pipeline on Two HPC Systems (Artemis vs Gadi)  
+
+## 1) Abstract  
+  
+## 2) Introduction and Aims  
+
+## 3) Materials and Methods  
+### 1.Cohort and Reference  
+We analyzed **11 whole‑genome samples** from our SCD cohort. To minimize sequencing batch effects, all 11 were **randomly selected from the same production batch**. We also **balanced sex** (5 female, 6 male) to limit sex‑specific biases in coverage and variant representation. No additional inclusion/exclusion filters beyond routine laboratory QC and availability of complete FASTQ pairs were applied.
+
+### Input data
+
+All analyses begin from the raw paired‑end FASTQ files for each individual, generated in the same sequencing run and delivered with standard laboratory checksums. The FASTQs were used unchanged on both Artemis and Gadi; file integrity was verified prior to processing.
+
+### Reference genome and indices
+
+Both pipelines use the human reference **GRCh38**. Specifically, we used the **NCBI RefSeq assembly GCF\_000001405.26 (GRCh38)** as the authoritative reference FASTA on both systems, together with matching index files (FAI, BWA/BWA‑MEM2 indices, and sequence dictionary). The identical reference bundle (FASTA + indices) was staged to each HPC to ensure bit‑for‑bit identical mapping coordinates and contig naming across runs.
+
+> Note: Any auxiliary resources (e.g., known‑sites VCFs, region lists) used by downstream steps were matched to the same GRCh38 build and kept identical between systems.
+
+### Data governance
+
+Raw FASTQs and derived analyses were stored on institutional HPC scratch compliant with project governance. Access is restricted to authorized project members; checksums (md5) are maintained for all inputs and final callsets. [Add ethics approval ID and storage paths when finalizing.]
+
+  
+
+
+
 # Gadi-benchmarking
 Template scripts to automate submission of identical benchmark tasks with increasing compute resources. 
 
